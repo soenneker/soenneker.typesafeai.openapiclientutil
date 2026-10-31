@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net11.0</TargetFramework>
+        <IsAotCompatible>true</IsAotCompatible>
+        <Nullable>enable</Nullable>
+        <Platforms>AnyCPU</Platforms>
+        <NoWarn>$(NoWarn);1591</NoWarn>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Description>A thread-safe utility for obtaining TypesafeAi's OpenApiClient singleton.</Description>
+        <Version Condition="'$(BUILD_VERSION)' == ''">11.0.0</Version>
+        <Version Condition="'$(BUILD_VERSION)' != ''">$(BUILD_VERSION)</Version>
+        <AssemblyName>Soenneker.TypesafeAi.OpenApiClientUtil</AssemblyName>
+        <PackageId>Soenneker.TypesafeAi.OpenApiClientUtil</PackageId>
+        <PackageTags>typesafeai openapiclientutil typesafe ai openapi client kiota util singleton typesafeaiopenapiclientutil csharp dotnet c# .net</PackageTags>
+        <Copyright>Copyright © 2026 Jake Soenneker</Copyright>
+        <Authors>Jake Soenneker</Authors>
+        <Company>https://soenneker.com</Company>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <IsPackable>true</IsPackable>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/soenneker/soenneker.typesafeai.openapiclientutil</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/soenneker/soenneker.typesafeai.openapiclientutil</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryBranch>main</RepositoryBranch>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <LangVersion>latest</LangVersion>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageIcon>icon.png</PackageIcon>
+        <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+        <PackageReleaseNotes Condition="'$(PACKAGE_RELEASE_NOTES)' != ''">$(PACKAGE_RELEASE_NOTES)</PackageReleaseNotes>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+        <None Include="..\..\LICENSE" Pack="true" PackagePath="\" />
+        <None Include="..\..\icon.png" Pack="true" PackagePath="\" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Soenneker.Kiota.GenericAuthenticationProvider" Version="11.0.59" />
+        <!--<PackageReference Include="Soenneker.TypesafeAi.HttpClients" Version="11.0.1" />
+        <PackageReference Include="Soenneker.TypesafeAi.OpenApiClient" Version="11.0.2" />-->
+        <PackageReference Include="Soenneker.Utils.AsyncSingleton" Version="11.0.886" />
+    </ItemGroup>
+</Project>
